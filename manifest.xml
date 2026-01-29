@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
+  <Id>12345678-1234-1234-1234-123456789012</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Signature Contact Extractor</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Extract Signature to Contact"/>
+  <Description DefaultValue="Automatically extract email signatures and create Outlook contacts"/>
+  <Hosts>
+    <Host xsi:type="MailHost">
+      <DesktopFormFactor>
+        <FunctionFile resid="functionfile"/>
+        <ExtensionPoint xsi:type="MessageReadCommandSurface">
+          <OfficeMenu id="OfficeAppMenu">
+            <Control xsi:type="Button" id="extractContactBtn">
+              <Label resid="extractContactLabel"/>
+              <Supertip>
+                <Title resid="extractContactTitle"/>
+                <Description resid="extractContactDesc"/>
+              </Supertip>
+              <Action xsi:type="ExecuteFunction">
+                <FunctionName>extractAndCreateContact</FunctionName>
+              </Action>
+            </Control>
+          </OfficeMenu>
+        </ExtensionPoint>
+      </DesktopFormFactor>
+    </Host>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation resid="taskpaneUrl"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteMailbox</Permissions>
+  <Resources>
+    <bt:Images>
+      <bt:Image id="icon16" DefaultValue="http://localhost:3000/images/icon16.png"/>
+      <bt:Image id="icon32" DefaultValue="http://localhost:3000/images/icon32.png"/>
+      <bt:Image id="icon80" DefaultValue="http://localhost:3000/images/icon80.png"/>
+    </bt:Images>
+    <bt:Urls>
+      <bt:Url id="functionfile" DefaultValue="http://localhost:3000/functions.html"/>
+      <bt:Url id="taskpaneUrl" DefaultValue="http://localhost:3000/taskpane.html"/>
+    </bt:Urls>
+    <bt:ShortStrings>
+      <bt:String id="extractContactLabel" DefaultValue="Add to Contacts"/>
+      <bt:String id="extractContactTitle" DefaultValue="Extract Signature"/>
+      <bt:String id="extractContactDesc" DefaultValue="Extract email signature and create a new contact"/>
+    </bt:ShortStrings>
+  </Resources>
+</OfficeApp>

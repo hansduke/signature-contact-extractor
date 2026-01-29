@@ -1,0 +1,13 @@
+{
+  "name": "signature-contact-extractor",
+  "version": "1.0.0",
+  "description": "Outlook add-in to extract email signatures and create contacts",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["outlook", "add-in", "contacts"],
+  "author": "",
+  "license": "MIT"
+}
